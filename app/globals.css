@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+  /* was 20s */
+}
+
+/* Tokens */
+:root {
+  /* Max content width for laptop/desktop (adjust as you like) */
+  --site-max: 1270px;
+
+  /* Side padding so content doesn’t hug edges on small screens */
+  --site-pad: 5px;
+}
+
+/* Reusable centered container */
+.site-container {
+  width: 100%;
+  max-width: var(--site-max);
+  margin-inline: auto;
+  /* centers on wide screens */
+  padding-inline: var(--site-pad);
+}
+
+/* Optional: scale up a bit on very large monitors */
+@media (min-width: 1440px) {
+  :root {
+    --site-max: 1280px;
+  }
+}
+
+@media (min-width: 1680px) {
+  :root {
+    --site-max: 1440px;
+  }
+}
+
+/* Optional: full‑bleed helper (use for hero/banners that must span edge‑to‑edge) */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-inline: 0;
+}
